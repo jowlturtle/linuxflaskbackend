@@ -1,5 +1,5 @@
 server:
-  port: 5000
+  port: 8080
   servlet:
     encoding:
       charset: utf-8
@@ -7,19 +7,22 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${rds.hostname}:${rds.port}/${rds.db.name}?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-    username: ${rds.username}
-    password: ${rds.password}
-
+    url: jdbc:mysql://localhost:3306/greenwalkdb?characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
   jpa:
     open-in-view: true
     hibernate:
       ddl-auto: update
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
     properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dialect
+      '[hibernate.format_sql]': true
+
+  output:
+    ansi:
+      enabled: always
 
   mail:
     host: smtp.gmail.com
@@ -51,7 +54,8 @@ jwt:
     expiration: 1209600000 #  (1000L(ms -> s) * 60L(s -> m) * 60L(m -> h) * 24L(h -> 하루) * 14(2주))
     header: "Authorization-refresh"
 
-
 logging:
   level:
-    '[org.springframework.boot.web]': INFO
+    '[org.springframework.boot.web]': DEBUG
+
+# debug info warn error
