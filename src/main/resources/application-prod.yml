@@ -7,9 +7,9 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${rds.hostname}:${rds.port}/${rds.db.name}?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-    username: ${rds.username}
-    password: ${rds.password}
+    url: jdbc:mysql://${rds_hostname}:${rds_port}/${rds_db_name}?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: ${rds_username}
+    password: ${rds_password}
 
   jpa:
     open-in-view: true
