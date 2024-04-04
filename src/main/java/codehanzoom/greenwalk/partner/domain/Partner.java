@@ -14,7 +14,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
+@Data
 public class Partner {
 
     @Id
@@ -36,17 +36,17 @@ public class Partner {
     private List<Donation> donations = new ArrayList<>();
 
     /**
-     * 모금액 증가
-     */
-    public void addDonationAmount(int money) {
-        this.totalDonationAmount += money;
-    }
-
-    /**
      * 모금액 감소
      */
     public void removeDonationAmount(int money) {
         int restDonationAmount = this.totalDonationAmount - money;
         this.totalDonationAmount  = restDonationAmount;
+    }
+
+    /**
+     * 모금액 증가
+     */
+    public void addDonationAmount(int donateAmount){
+        this.totalDonationAmount += donateAmount;
     }
 }

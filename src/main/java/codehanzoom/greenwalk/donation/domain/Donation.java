@@ -34,7 +34,7 @@ public class Donation {
     private LocalDateTime createDate;
     private LocalDateTime modifyDate;
 
-    public static Donation createDonation(User user, Partner partner, int donationAmount) {
+    public final static Donation createDonation(User user, Partner partner, int donationAmount) {
 //        Donation donation = new Donation();
         Donation donation = Donation.builder()
                 .user(user)

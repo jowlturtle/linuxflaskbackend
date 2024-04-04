@@ -31,9 +31,8 @@ public class PartnerService {
     }
 
     @Transactional
-    public void updatePartner(Long partnerId, String name, int donateAmount) {
+    public void updateDonationAmount(Long partnerId, int donateAmount) {
         Partner findPartner = partnerRepository.findById(partnerId).get();
-        findPartner.setName(name);
-        findPartner.setTotalDonationAmount(donateAmount);
+        findPartner.addDonationAmount(donateAmount);
     }
 }

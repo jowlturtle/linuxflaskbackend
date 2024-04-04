@@ -1,7 +1,9 @@
 package codehanzoom.greenwalk.partner.dto;
 
 import codehanzoom.greenwalk.partner.domain.Partner;
+import lombok.Getter;
 
+@Getter
 public class PartnerDto {
 
     private Long id;
