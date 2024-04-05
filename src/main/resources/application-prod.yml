@@ -12,11 +12,19 @@ spring:
     password: ${rds.password}
 
   jpa:
-    open-in-view: true
     hibernate:
       ddl-auto: update
+      #create update none
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+
+#  jpa:
+#    open-in-view: true
+#    hibernate:
+#      ddl-auto: update
+#      naming:
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
   mail:
     host: smtp.gmail.com
@@ -49,6 +57,6 @@ jwt:
     header: "Authorization-refresh"
 
 
-logging:
-  level:
-    '[org.springframework.boot.web]': INFO
+#logging:
+#  level:
+#    '[org.springframework.boot.web]': INFO
