@@ -17,13 +17,6 @@ jobs:
         with:
           java-version: 17
           distribution: zulu
-#      - name: Setup MySQL
-#        uses: samin/mysql-action@v1
-#        with:
-#          character set server: 'utf8'
-#          mysql database: 'greenwalkdb'
-#          mysql user: ${{ secrets.DB_PASSWORD }}
-#          mysql password: ${{ secrets.DB_PASSWORD }}
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
       - name: Build with Gradle
@@ -54,6 +47,6 @@ jobs:
           aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
           application_name: greenwalk-beanstalk # 엘리스틱 빈스톡 애플리케이션 이름!
           environment_name: Greenwalk-beanstalk-env # 엘리스틱 빈스톡 환경 이름!
-          version_label: greenwalk-${{steps.current-time.outputs.formattedTime}}
+          version_label: backend-${{steps.current-time.outputs.formattedTime}}
           region: ap-northeast-2
           deployment_package: deploy/deploy.zip
