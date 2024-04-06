@@ -20,7 +20,7 @@ public class UserApiController {
 
     @GetMapping({"","/"})
     public String index()  {
-        return "index";
+        return "<h1>index</h1>";
     }
 
     // ROLE_USER의 회원가입 경로
