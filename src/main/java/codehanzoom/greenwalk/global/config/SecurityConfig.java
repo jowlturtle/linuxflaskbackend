@@ -48,6 +48,7 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests
                         (authorizeRequests -> authorizeRequests
+                                .requestMatchers("/").permitAll() // "/" 경로에 대한 모든 접근 허용
                                 .requestMatchers("/auth/**").permitAll()// 로그인,회원가입 경로
                                 //.requestMatchers("/api/v1/admin/**").hasRole("ADMIN") // ADMIN 접속 URL => ADMIN 사용 시 주석 해제
                                 .anyRequest().authenticated()); // 위의 경로 이외에는 모두 인증된 사용자만 접근 가능

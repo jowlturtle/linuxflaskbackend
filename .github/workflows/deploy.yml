@@ -1,4 +1,4 @@
-name: backend
+name: aws-v5
 on:
   push:
     branches:
