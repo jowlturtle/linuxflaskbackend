@@ -51,3 +51,19 @@ jobs:
           version_label: aws-v5-${{steps.current-time.outputs.formattedTime}}
           region: ap-northeast-2
           deployment_package: deploy/deploy.zip
+
+  run-test-code:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+      - name: Change working directory
+        run: cd ./yolov5
+      - name: Install dependencies and run test
+        working-directory: ./yolov5
+        run: |
+          pip install -r requirements.txt
+          python test.py 0.0.0.0:5001
+          chmod 777 yolov5
