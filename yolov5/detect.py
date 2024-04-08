@@ -33,11 +33,11 @@ import csv
 import os
 import platform
 import sys
-##from pathlib import Path
-## 추가
-import pathlib
 from pathlib import Path
-pathlib.PosixPath = pathlib.WindowsPath
+## 추가
+#import pathlib
+#from pathlib import Path
+#pathlib.PosixPath = pathlib.WindowsPath
 ## 추가
 
 import torch
